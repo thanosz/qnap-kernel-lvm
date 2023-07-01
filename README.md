@@ -3,7 +3,7 @@
 ## Introduction
 If your QNAP device is dead you cannot access the files on the disk on a linux machine. This is because QNAP has modified the kernel and lvm code. With this kernel and initrd, you can spawn a VM to access the disk contents. 
 
-I have never owned a QNAP device. This was a side project to recover the files in a QNAP disk for a colleague.
+I have never owned a QNAP device. This was a side project to recover the files from a QNAP disk for a colleague. The QNAP model the disk was extracted from was TS-251+. I would not know if the kernel/initrd would work for other QNAP devices.
 
 ## How to use
 You need a Linux host with qemu to spawn the VM. 
