@@ -10,7 +10,7 @@ You need a Linux host with qemu to spawn the VM.
 1. Plugin the disk to your linux host (via a usb dock)
 2. Activate the proper mdraid array (if applicable). Typically you have opted for RAID1 setup. The contents should be on the third partition.
 3. ```cat /proc/mdstat``` and activate the array with ```mdadm --run /dev/mdXXX```
-4. Then spawn a VM using the kernel and initrd passing the mdraid array. The /dev/sda3 here is a second disk in order to copy your files
+4. Then spawn a VM using the kernel and initrd passing the mdraid array. The /dev/sdb1 here is a second disk in order to copy your files
    ```
    qemu-system-x86_64 \
    -kernel vmlinuz-3.12.6 \
@@ -18,7 +18,7 @@ You need a Linux host with qemu to spawn the VM.
    -append "init=/bin/busybox console=ttyS0" \
    -nographic -m 128M \
    -drive file=/dev/md125 \
-   -drive file=/dev/sda3 \
+   -drive file=/dev/sdb1 \
    -serial mon:stdio
 6. Once booted you should be able to activate LVM volumes and copy your files
    ```
